@@ -15,6 +15,6 @@ for i = 1:n
     A(2 * i,:) = [0 0 0 x y 1 -yy*x -yy*y -yy];
 end
 [V,D] = eig(A'*A);
-[~,k] = min(diag(D));
-H = reshape(V(:,k),[3,3])';
+[~,m] = min(diag(D));
+H = reshape(V(:,m),3,3)';
 end
