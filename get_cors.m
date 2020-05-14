@@ -1,10 +1,12 @@
+% part (a)
 function [points] = get_cors(img)
-img = "izuku.jpg";
+%Uncomment the following line if testing
+%img = "izuku.jpg";
 imshow(img);
 title('Quit with Enter');
 hold on;
 [x,y] = ginput();
 points = [x,y]';
-plot(x,y,'x','linewidth',5);
+plot(x,y,'r.','MarkerSize',12);
 hold off;
 end
