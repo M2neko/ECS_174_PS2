@@ -1,4 +1,4 @@
-% part (b)
+% part2 (b)
 function H = computeH(t1, t2)
 n = size(t1, 2);
 if n < 4
@@ -16,5 +16,5 @@ for i = 1:n
 end
 [V,D] = eig(A'*A);
 [~,m] = min(diag(D));
-H = reshape(V(:,m),3,3)';
+H = reshape(V(:,m),[3,3])';
 end

@@ -1,4 +1,4 @@
-% part (c)
+% part2 (c)
 function [warpIm, mergeIm] = warpImage(inputIm, refIm, H)
 corners = zeros(4,2);
 [r,c,~] = size(inputIm);

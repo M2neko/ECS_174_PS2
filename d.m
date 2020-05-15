@@ -46,7 +46,7 @@ imwrite(mosaic4,'carmos.png');
 %}
 
 % part3 (b)
-
+%{
 img = imread('tiles.jpg');
 [M,N,~] = size(img);
 [cc7] = get_correspondences_fronto(img,4);
@@ -55,6 +55,6 @@ H5 = computeH(cc7,cc8);
 [warp5,mosaic5] = warpImage(img,img,H5);
 imwrite(warp5,'tileswarp.png');
 imwrite(mosaic5,'tilesmos.png');
-
+%}
 
 
