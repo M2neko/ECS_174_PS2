@@ -1,18 +1,15 @@
 % part (a)
-function [points1,points2] = get_correspondences(img1,img2)
+function [points1,points2] = get_correspondences(img1,img2,n)
 imshow(img1);
-title('Quit with Enter');
-hold on;
-[x,y] = ginput();
+title('Image 1');
+[x,y] = ginput(n);
 points1 = [x,y]';
 plot(x,y,'r.','MarkerSize',12);
-hold off;
 
 imshow(img2);
-title('Quit with Enter');
+title('Image 2');
 hold on;
-[x,y] = ginput();
+[x,y] = ginput(n);
 points2 = [x,y]';
 plot(x,y,'r.','MarkerSize',12);
-hold off;
 end
