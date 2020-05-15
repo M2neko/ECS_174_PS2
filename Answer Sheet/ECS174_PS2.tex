@@ -86,6 +86,28 @@ Nan Chen \ 915218152
             \caption{town\_mosic}
         \end{figure}
         Source: https://www.bilibili.com/bangumi/play/ep264278.
+        \\
+        \\
+        Another example:
+        \begin{figure}[htbp]
+            \centering
+            \begin{minipage}[t]{0.48\textwidth}
+            \centering
+            \includegraphics[width=6cm, height=7cm]{../mountain1.png}
+            \caption{mountain\_source\_1}
+            \end{minipage}
+            \begin{minipage}[t]{0.48\textwidth}
+            \centering
+            \includegraphics[width=7cm, height=5cm]{../mountain2.png}
+            \caption{mountain\_source\_2}
+            \end{minipage}
+        \end{figure}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=15cm, height=10cm]{../mountainmos.png}
+            \caption{mountain\_mosic}
+        \end{figure}
+        Source: https://unsplash.com/photos/Y8lCoTRgHPE.
         \item [(f)] Images:
         \begin{figure}[H]
             \centering
@@ -142,16 +164,23 @@ Nan Chen \ 915218152
         \end{figure}
         \begin{figure}[H]
             \centering
-            \includegraphics[width=15cm, height=12cm]{../mountainmos_O.png}
+            \includegraphics[width=15cm, height=10cm]{../mountainmos_O.png}
             \caption{mountain\_mosic\_original}
         \end{figure}
         \begin{figure}[H]
             \centering
-            \includegraphics[width=15cm, height=12cm]{../mountainmos_R.png}
+            \includegraphics[width=15cm, height=10cm]{../mountainmos_R.png}
             \caption{mountain\_mosic\_RANSAC}
         \end{figure}
         Source: https://unsplash.com/photos/Y8lCoTRgHPE.\\
-        TO Write Something.
+        \\
+        Code: \textbf{RANSAC\_script.m} and \textbf{RANSAC.m}.\\
+        \\
+        Explanation: We implemented a new function \textbf{bestH = RANSAC(t1, t2)} to calculate the new H value using RANSAC algorithm.
+        From Figure 16 and Figure 17, we can see there is one bad point selected. Thus, in Figure 18, the image
+        is "broken" and no longer seems "stitch". In Figure 19, we use RANSAC method, and that can eliminate the bad point; therefore, gives us the correct stitch.\\
+        \\
+        Implementation: The user can use the script \textbf{RANSAC\_script.m} and change the image names to get results with RANSAC algorithm.
         \item [(b)] Images:
         \begin{figure}[H]
             \centering
@@ -164,7 +193,15 @@ Nan Chen \ 915218152
             \caption{tiles\_fronto}
         \end{figure}
         Source: https://www.wayfair.com/home-improvement/pdp/msi-bianco-dolomite-marble-mosaic-tile-mvp4112.html?piid=49665325.\\
-        To Write Something.
+        \\
+        Code: \textbf{fronto\_script.m} and \textbf{get\_correspondences\_fronto.m}.\\
+        \\
+        Explanation: We revised the \textbf{get\_correspondences()} function to only get the four points of one image. Then, we use these four points
+        as the first input points to compute H, and we selected the four corners of the image as the second input points to compute H. Lastly, as
+        usual, we use the image twice and H to get the results. \\
+        \\
+        Implementation: The user can use the script \textbf{fronto\_script.m} and change the image name to get results. Either warp result or merge result
+        is okay.
         {$\square$}
     \end{itemize}
 \end{solution}
