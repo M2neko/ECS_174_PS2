@@ -45,16 +45,31 @@ imwrite(warp4,'carwarp.png');
 imwrite(mosaic4,'carmos.png');
 %}
 
+% part3 (a)
+%{
+img5 = imread('mountain1.png');
+img6 = imread('mountain2.png');
+[cc7,cc8] = get_correspondences(img5,img6,7);
+H5_R = RANSAC(cc7,cc8);
+[warp5_R,mosaic5_R] = warpImage(img5,img6,H5_R);
+H5 = computeH(cc7,cc8);
+[warp5,mosaic5] = warpImage(img5,img6,H5);
+imwrite(warp5_R,'mountainwarp_R.png');
+imwrite(mosaic5_R,'mountainmos_R.png');
+imwrite(warp5,'mountainwarp_O.png');
+imwrite(mosaic5,'mountainmos_O.png');
+%}
+
 % part3 (b)
 %{
 img = imread('tiles.jpg');
 [M,N,~] = size(img);
-[cc7] = get_correspondences_fronto(img,4);
-cc8 = double([1 1;1 M;N M;N 1]');
-H5 = computeH(cc7,cc8);
-[warp5,mosaic5] = warpImage(img,img,H5);
-imwrite(warp5,'tileswarp.png');
-imwrite(mosaic5,'tilesmos.png');
+[cc9] = get_correspondences_fronto(img,4);
+cc10 = double([1 1;1 M;N M;N 1]');
+H6 = computeH(cc9,cc10);
+[warp6,mosaic6] = warpImage(img,img,H6);
+imwrite(warp6,'tileswarp.png');
+imwrite(mosaic6,'tilesmos.png');
 %}
 
 
