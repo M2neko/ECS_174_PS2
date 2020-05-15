@@ -77,7 +77,6 @@ wap_y = max([1,warpIm_miny]);
 new_ref(ref_y:ref_y + rr - 1,ref_x:ref_x + rc - 1,:) = refIm(:,:,:);
 new_wap(wap_y:wap_y + wr - 1,wap_x:wap_x + wc - 1,:) = warpIm(:,:,:);
 
-
 for i = 1:nheight
     for j = 1:nwidth
         if new_ref(i,j,1) > 0 || new_ref(i,j,2) > 0 || new_ref(i,j,3) > 0
@@ -88,32 +87,6 @@ for i = 1:nheight
         end
     end
 end
-
-% Also work but slow?
-%{
-for i = 1:nheight
-    for j = 1:nwidth
-        if ~isequal(new_ref(i,j,:),double(zeros(1,1,3))) 
-            mergeIm(i,j,:) = new_ref(i,j,:);
-        end
-        if ~isequal(new_wap(i,j,:),double(zeros(1,1,3))) 
-            mergeIm(i,j,:) = new_wap(i,j,:);
-        end
-    end
-end
-%}
-
-% Also work but slow
-%{
-for i = 1:nheight
-    for j = 1:nwidth
-        mergeIm(i,j,:) = new_ref(i,j,:);
-        if new_wap(i,j,1) > 0 || new_wap(i,j,2) > 0 || new_wap(i,j,3) > 0
-            mergeIm(i,j,:) = new_wap(i,j,:);
-        end
-    end
-end
-%}
 
 % Test 50% blend
 %{
