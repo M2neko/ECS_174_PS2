@@ -49,8 +49,10 @@ warpIm = cat(3,R,G,B);
 
 warpIm(isnan(warpIm)) = 0;
 
+warpIm = uint8(warpIm);
+
 figure;
-imshow(uint8(warpIm));
+imshow(warpIm);
 title('warpIm');
 
 %-----------------------------------------------------------
@@ -102,16 +104,6 @@ for i = 1:nheight
 end
 %}
 
-% Test 50% blend
-%{
-for i = 1:nheight
-    for j = 1:nwidth
-        mergeIm(i,j,:) = new_ref(i,j,:) / 2 + new_wap(i,j,:) / 2;
-    end
-end
-%}
-
-
 % Also work but slow
 %{
 for i = 1:nheight
@@ -124,8 +116,19 @@ for i = 1:nheight
 end
 %}
 
+% Test 50% blend
+%{
+for i = 1:nheight
+    for j = 1:nwidth
+        mergeIm(i,j,:) = new_ref(i,j,:) / 2 + new_wap(i,j,:) / 2;
+    end
+end
+%}
+
+mergeIm = uint8(mergeIm);
+
 figure;
-imshow(uint8(mergeIm));
+imshow(mergeIm);
 title('mergeIm');
 
 %-----------------------------------------------------------
