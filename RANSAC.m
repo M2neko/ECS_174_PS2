@@ -6,7 +6,7 @@ n = size(t1, 2);
 % https://en.wikipedia.org/wiki/Random_sample_consensus
 w = 0.85;
 p = 0.99;
-k = round(log10(1-p)/log10(1-w^n));
+k = round(log10(1 - p)/log10(1 - w^n));
 
 % e is epsilon in this algorithm
 e = 20;
@@ -20,7 +20,7 @@ bestH = zeros(3,3);
 
 while i < k
     fit = 0;
-    select = randperm(n, 4);
+    select = randperm(n,4);
     t1_s = t1(:, select);
     t2_s = t2(:, select);
     H = computeH(t1_s,t2_s);
