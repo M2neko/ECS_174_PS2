@@ -13,7 +13,7 @@
 \newtheorem*{efficiency}{Efficiency}
 \newtheorem*{example}{Example}
 \newtheorem{step}{Step}
-\newenvironment{solution}[1][\it{Solution}]{\textbf{#1. } }
+\newenvironment{solution}
 
 
 \begin{document}
@@ -27,7 +27,39 @@ Nan Chen \ 915218152
 \end{parter}
     
 \begin{solution}
+    \begin{itemize}
+        \item [(1)]We believe that the grouping algorithm graph-cuts, would be the most appropriate grouping algorithm to recover the model parameter hypotheses from the continuous vote space. The reason is that it links every pair of pixels and assigns an affinity weight for each edge. 
+        \\
+        Also, graph-cuts connect shapes with edges that have high affinity while mean shift and k-means does not, which suits those lines and circles defined by a set of boundary points in Hough Transform.
+        \item [(2)]From using K-means clustering with two groups, we will have two center points which divides all the feature inputs into two clusters. Each center point will get half of the feature points and the center point will be positioned by calculating the least squared Euclidean distance. After that it will updates the new center of each cluster. The process will keep repeated until half of the data points are in one group and the other half is in the other group.
+        \item [(3)]TO BE CONTINUE. {$\square$}
+    \end{itemize}
+\end{solution}
+
+\begin{parter}
+\end{parter}
     
+\begin{solution}
+    \begin{itemize}
+        \item [(a)]The code is written in file \textbf{get\_correspondences.m}. The function has two inputs of two images and the number of points the user wants to pick. The outputs are two 2 x N point matrices of selected points.
+        \item [(b)]The code is written in file \textbf{computeH.m}.
+        \item [(c)]The code is written in file \textbf{warpImage.m}.
+        \item [(d)]TO BE CONTINUE. 
+        \item [(e)]TO BE CONTINUE. 
+        \item [(f)]TO BE CONTINUE. 
+        {$\square$}
+    \end{itemize}
+\end{solution}
+
+\begin{parter}
+\end{parter}
+    
+\begin{solution}
+    \begin{itemize}
+        \item [(a)]TO BE CONTINUE. 
+        \item [(b)]TO BE CONTINUE. 
+        {$\square$}
+    \end{itemize}
 \end{solution}
 
 \end{document}
