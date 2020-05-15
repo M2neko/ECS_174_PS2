@@ -27,8 +27,8 @@ corners(4,2) = rb(2) / rb(3);
 
 warpIm_minx = round(min([corners(1,1),corners(2,1),corners(3,1),corners(4,1), 1]));
 warpIm_miny = round(min([corners(1,2),corners(2,2),corners(3,2),corners(4,2), 1]));
-warpIm_maxx = round(max([corners(1,1),corners(2,1),corners(3,1),corners(4,1),size(double(refIm),1)]));
-warpIm_maxy = round(max([corners(1,2),corners(2,2),corners(3,2),corners(4,2),size(double(refIm),2)]));
+warpIm_maxx = round(max([corners(1,1),corners(2,1),corners(3,1),corners(4,1),size(double(refIm),2)]));
+warpIm_maxy = round(max([corners(1,2),corners(2,2),corners(3,2),corners(4,2),size(double(refIm),1)]));
 [x,y] = meshgrid(warpIm_minx:warpIm_maxx, warpIm_miny:warpIm_maxy);
 
 [h,w] = size(x);
@@ -68,7 +68,6 @@ nwidth = max([wc,rc]);
 new_ref = zeros(nheight,nwidth,3);
 new_wap = zeros(nheight,nwidth,3);
 mergeIm = zeros(nheight,nwidth,3);
-
 
 ref_x = max([1,1 - warpIm_minx]);
 ref_y = max([1,1 - warpIm_miny]);
