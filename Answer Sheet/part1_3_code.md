@@ -1,4 +1,4 @@
-```C
+```
 variables:
     blobs: the set of the blobs.
     areas: the set of the areas of blobs.
