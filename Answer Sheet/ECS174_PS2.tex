@@ -28,16 +28,19 @@ Nan Chen \ 915218152
     
 \begin{solution}
     \begin{itemize}
-        \item [(1)]We believe that the grouping algorithm graph-cuts, would be the most appropriate grouping algorithm to recover the model parameter hypotheses from the continuous vote space. The reason is that it links every pair of pixels and assigns an affinity weight for each edge.\\
-        \\ Additionally, graph-cuts connect shapes with edges that have high affinity while mean shift and k-means does not, which suits those lines and circles defined by a set of boundary points in Hough Transform.\\
-        \\ But here comes a problem which we find mean-shifts might have better performance. Graph-cuts use a pixel-based energy function to compute the similarity of neighboring pixels, while in a continuous space there will be an infinite number of points, each with an infinite number of neighbors, so this would not work. For mean-shift, it is non-parametric and does not segment the vote space because it takes in the number of clusters we want as input. The algorithm naturally discretizes the vote space, and we do not need discretization of the vote space in the mean-shift algorithm.\\
+        \item [(1)]We believe that the grouping algorithm graph-cuts, would be the most appropriate grouping algorithm to recover the model parameter hypotheses from the continuous vote space. The reason is that each edge of it has its own affinity weight, and pixels are linked in pairs. Additionally, graph-cuts connect shapes on edges with high affinity while mean shift and k-means does not, which works well when shapes are defined by boundary points in Hough Transform. \\
+        \\ But here comes a problem which we find mean-shifts might have better performance. Graph-cuts use a pixel-based energy function to compute the similarity of neighboring pixels, while in a continuous space we cannot count the number of points or their neighbors, so this would not work. For mean-shift, it is non-parametric and does not segment the vote space. We do not need to discretize of the vote space in the mean-shift algorithm because the algorithm itself already does it.\\        
         \\ We do not choose k-means because in continuous vote space, it is hard(impossible) to select parameter k.
-        \item [(2)]If we use K-means to cluster with two graphs, we will have two center points which divides all the feature inputs into two clusters. Each center point will get half of the feature points and the center point will be positioned by calculating the least squared Euclidean distance. After that it will updates the new center of each cluster. The process will keep repeated until half of the data points are in one group and the other half is in the other group.
-        \item [(3)]TO BE CONTINUE. 
+        \item [(2)]After using K-means to cluster those points into two groups, we will have two center points for outputs in two clusters. Each center point will be randomly positioned at the beginning. After that, new positions of two center points will be updated by calculating the least squared Euclidean distance from feature points in its own cluster. The process will keep repeated until feature points are divided equally in two groups, belonging to those two center points, which means half points will be close to one center point, and half will be close to the other center point.
+        \item [(3)]Variables and Pseudocode:
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=16cm, height=20cm]{../pseudocode.png}
+        \end{figure}
         {$\square$}
     \end{itemize}
 \end{solution}
-
+\clearpage
 \begin{parter}
 \end{parter}
     
